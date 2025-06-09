@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online library</title>
+    <title>User Home</title>
     <link rel="stylesheet" href="css/styleindex.css">
-    <link rel="stylesheet" href="css/memberHome.css">
+    <link rel="stylesheet" href="css/userHome.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
@@ -17,7 +17,7 @@
             <span class="titleName">Online Library</span>
         </div>
         <nav class="nav-header">
-            <a href="memberHome.jsp" class="item-header active">Home</a>
+            <a href="userHome.jsp" class="item-header active">Home</a>
             <a href="browse.jsp" class="item-header">Browse</a>
             <a href="#" class="item-header">Contact</a>
         </nav>
@@ -33,8 +33,9 @@
                         <strong>${sessionScope.user != null ? sessionScope.user.name : 'member'}</strong>
                         <p>${sessionScope.user != null ? sessionScope.user.email : 'Please login'}</p>
                     </div>
-                    <a href="#">Admin</a>
-                    <a href="profile">Profile</a>
+                    <a href="memberProfile.jsp">Profile</a>
+                    <a href="#">Borrowed Books</a>
+                    <a href="#">History</a>
                     <a href="login.jsp">Logout</a>
                 </div>
             </div>

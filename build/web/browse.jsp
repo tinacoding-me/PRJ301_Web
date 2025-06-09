@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/styleindex.css">
     <link rel="stylesheet" href="css/browse.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+    <%@ page import="dto.User" %>
 </head>
 <body>
     <header class="header">
@@ -18,7 +18,21 @@
             <span class="titleName">Online Library</span>
         </div>
         <nav class="nav-header">
-            <a href="userHome.jsp" class="item-header">Home</a>
+            <%
+                User user = (User) session.getAttribute("user");
+                String targetPage = null;
+                
+                if(user != null) {
+                    if(user.getRole().equals("admin")){
+                        targetPage = "adminHome.jsp";
+                    } else {
+                        targetPage = "memberHome.jsp";
+                    }
+                } else {
+                    targetPage = "index.jsp";
+                }
+            %>
+            <a href="<%= targetPage %>" class="item-header">Home</a>
             <a href="browse.jsp" class="item-header active">Browse</a>
             <a href="#" class="item-header">Categories</a>
             <a href="#" class="item-header">About</a>
