@@ -21,8 +21,6 @@
         <div class="nav-header">
             <a href="#" class="item-header">Home</a>
             <a href="#" class="item-header">Browse</a>
-            <a href="#" class="item-header">Categories</a>
-            <a href="#" class="item-header">About</a>
             <a href="#" class="item-header">Contact</a>
         </div>
 

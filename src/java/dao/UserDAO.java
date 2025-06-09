@@ -63,6 +63,38 @@ public class UserDAO {
         User user = getUserByEmail(email);
         return user != null && user.getPassword().equals(password);
     }
+    
+    //Dung de chen vao nguoi dung moi khi dang ki
+    public int insertNewUser(String name, String email, String password) throws Exception {
+        int result = 0;
+        Connection cn = null;
+        PreparedStatement st = null;
+        ResultSet rs = null;
+        
+        try {
+            cn = DBUtils.getConnection();
+            
+            String sql = "INSERT INTO users (name, email, password, role, status) VALUES (?, ?, ?, 'user', 'active')";
+            st = cn.prepareStatement(sql);
+            st.setString(1, name);
+            st.setString(2, email);
+            st.setString(3, password);
+            result = st.executeUpdate();
+            
+        } catch (Exception e) {
+            throw new Exception("Error register: " + e.getMessage());
+        } finally {
+            try {
+                if(rs != null) rs.close();
+                if(st != null) st.close();
+                if(cn != null) cn.close();
+            } catch (Exception e) {
+                throw new Exception("Error closing resources: " + e.getMessage());
+            }
+        }
+        
+        return result;
+    }
 }
 
 
