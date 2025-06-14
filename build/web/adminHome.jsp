@@ -34,8 +34,8 @@
                         <p>${sessionScope.user != null ? sessionScope.user.email : 'Please login'}</p>
                     </div>
                     <a href="#">Admin</a>
-                    <a href="profile">Profile</a>
-                    <a href="login.jsp">Logout</a>
+                    <a href="adminProfile.jsp">Profile</a>
+                    <a href="${pageContext.request.contextPath}/logout">Logout</a>
                 </div>
             </div>
         </div>

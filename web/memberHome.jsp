@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Home</title>
     <link rel="stylesheet" href="css/styleindex.css">
-    <link rel="stylesheet" href="css/userHome.css">
+    <link rel="stylesheet" href="css/memberHome.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
@@ -36,7 +36,7 @@
                     <a href="memberProfile.jsp">Profile</a>
                     <a href="#">Borrowed Books</a>
                     <a href="#">History</a>
-                    <a href="login.jsp">Logout</a>
+                    <a href="${pageContext.request.contextPath}/logout">Logout</a>
                 </div>
             </div>
         </div>

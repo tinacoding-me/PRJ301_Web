@@ -8,6 +8,7 @@
     <title>Browse Books - Online Library</title>
     <link rel="stylesheet" href="css/styleindex.css">
     <link rel="stylesheet" href="css/browse.css">
+    <link rel="stylesheet" href="css/memberHome.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <%@ page import="dto.User" %>
 </head>
@@ -50,8 +51,9 @@
                         <strong>${sessionScope.user != null ? sessionScope.user.name : 'member'}</strong>
                         <p>${sessionScope.user != null ? sessionScope.user.email : 'Please login'}</p>
                     </div>
-                    <a href="profile">User Profile</a>
-                    <a href="login.jsp">Logout</a>
+                    <a href="#">Admin</a>
+                    <a href="adminProfile.jsp">Profile</a>
+                    <a href="${pageContext.request.contextPath}/logout">Logout</a>
                 </div>
             </div>
         </div>
